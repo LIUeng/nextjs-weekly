@@ -31,6 +31,10 @@ export default function Teambition({ searchParams }: serverProps) {
     <div className="py-6">
       <form action={"/teambition"} className="space-y-4">
         <div>
+          <p className="text-sm text-muted-foreground">
+            提示：提供凭证信息（打开控制台任意复制一个请求接口的 Request Headers
+            -&gt; Cookie 选项即可开始查询）
+          </p>
           <Input
             placeholder="输入 Cookie 信息"
             defaultValue={cookie}
