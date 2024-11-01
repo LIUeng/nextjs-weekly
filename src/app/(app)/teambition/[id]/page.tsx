@@ -106,13 +106,13 @@ export default async function TeambitionNext({
                 <span style={{ color: "orangered" }}>
                   {item.executor?.name}
                 </span>
-                ) ---
+                )
                 <a
                   href={`https://tb.raycloud.com/task/${item._id}`}
                   target="_blank"
                   style={{ color: "blue" }}
                 >
-                  点击 TB 链接
+                  跳转TB
                 </a>
               </li>
             ))}

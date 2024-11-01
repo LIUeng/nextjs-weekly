@@ -103,14 +103,13 @@ export default async function TeambitionTable({
       render(row) {
         return (
           <>
-            <Link
-              href={{
-                pathname: `/teambition/${row._parent_id}`,
-                query: values,
-              }}
+            <a
+              className="inline-block no-underline transition-colors hover:text-foreground text-muted-foreground"
+              target="_blank"
+              href={row.url}
             >
               {row.content}
-            </Link>
+            </a>
             <div className="ml-2 inline-flex">
               <Copy text={row.content} />
             </div>
@@ -150,13 +149,14 @@ export default async function TeambitionTable({
       render(row) {
         return (
           <>
-            <a
-              className="inline-block no-underline transition-colors hover:text-foreground text-muted-foreground"
-              target="_blank"
-              href={row.url}
+            <Link
+              href={{
+                pathname: `/teambition/${row._parent_id}`,
+                query: values,
+              }}
             >
-              跳转
-            </a>
+              详情
+            </Link>
             <div className="inline-flex">
               <Copy text={row.url} />
             </div>
