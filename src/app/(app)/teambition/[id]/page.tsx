@@ -7,12 +7,10 @@ import {
 import { serverProps } from "../page";
 import request from "@/lib/request";
 import AvatarTooltip from "@/components/AvatarTooltip";
-import showdown from "showdown";
 import "./page.css";
 import Link from "next/link";
 import { priorityOptions } from "../config";
-
-const converter = new showdown.Converter();
+import MarkdownHtml from "./markdown-html";
 
 type DataProps = {
   _id: string;
@@ -120,12 +118,7 @@ export default async function TeambitionNext({
         </div>
         <div className="flex">
           <div className="w-[140px] shrink-0">备注：</div>
-          <div
-            className="markdown-html"
-            dangerouslySetInnerHTML={{
-              __html: converter.makeHtml(data?.note || ""),
-            }}
-          />
+          <MarkdownHtml data={data.note || ""} />
         </div>
       </div>
     </div>
